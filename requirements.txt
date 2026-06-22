@@ -1,0 +1,4 @@
+pygame-ce>=2.5.0
+neat-python>=0.92
+numpy>=1.26
+pytest>=8.0
