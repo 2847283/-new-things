@@ -1,3 +1,7 @@
 checkpoints/
 venv/
 __pycache__/
+
+# 误生成/误拷的本地垃圾，勿提交
+nul
+disabled/

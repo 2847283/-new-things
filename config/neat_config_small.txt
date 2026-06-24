@@ -1,12 +1,11 @@
 [NEAT]
 fitness_criterion     = max
 fitness_threshold     = 10000
-pop_size              = 50
+pop_size              = 4
 reset_on_extinction   = False
 no_fitness_termination = True
 
 [DefaultGenome]
-# 网络拓扑：输入 11（8 路墙射线 + 对手 dx/dy/距离），输出 5（不动/上/下/左/右）
 num_inputs              = 11
 num_hidden              = 0
 num_outputs             = 5
@@ -20,7 +19,6 @@ node_add_prob           = 0.2
 node_delete_prob        = 0.2
 single_structural_mutation = false
 structural_mutation_surer = default
-# ---- 节点基因 ----
 activation_default      = tanh
 activation_mutate_rate  = 0.0
 activation_options      = tanh
@@ -43,7 +41,6 @@ response_min_value      = -30.0
 response_mutate_power   = 0.0
 response_mutate_rate    = 0.0
 response_replace_rate   = 0.0
-# ---- 连接基因 ----
 weight_init_mean        = 0.0
 weight_init_stdev       = 1.0
 weight_init_type        = gaussian
