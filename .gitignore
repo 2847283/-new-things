@@ -1,0 +1,37 @@
+.agents/
+.codex/
+
+# Unity generated folders
+FireChampionUnity/Library/
+FireChampionUnity/Logs/
+FireChampionUnity/Temp/
+FireChampionUnity/Obj/
+FireChampionUnity/Build/
+FireChampionUnity/Builds/
+FireChampionUnity/UserSettings/
+FireChampionUnity/MemoryCaptures/
+FireChampionUnity/Recordings/
+
+# Unity generated project files
+FireChampionUnity/*.csproj
+FireChampionUnity/*.sln
+FireChampionUnity/*.suo
+FireChampionUnity/*.user
+FireChampionUnity/*.pidb
+FireChampionUnity/*.booproj
+FireChampionUnity/*.svd
+FireChampionUnity/*.pdb
+FireChampionUnity/*.mdb
+FireChampionUnity/*.opendb
+FireChampionUnity/*.VC.db
+
+# Build artifacts and QA captures/logs
+outputs/*
+!outputs/LATEST_BUILD.txt
+
+# OS and editor noise
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.tmp
+*.log

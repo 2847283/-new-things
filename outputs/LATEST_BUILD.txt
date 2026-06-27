@@ -1,0 +1,60 @@
+﻿Fire Champion latest verified build - 2026-06-27 22:42 Asia/Shanghai
+
+Unity project:
+F:\东西\智能体\项目\ai小玩意\FireChampionUnity
+
+Latest verified deliverables:
+- Windows player zip: F:\东西\智能体\项目\ai小玩意\outputs\FireChampion-Windows-20260627-224118.zip
+- Unity source zip: F:\东西\智能体\项目\ai小玩意\outputs\FireChampion-UnityProject-20260627-224118.zip
+
+Latest build output folder:
+- F:\东西\智能体\项目\ai小玩意\outputs\FireChampionWindows\FireChampion.exe
+
+This pass added:
+- QA launch support for summary variants through -firechampion-qa-summary win|loss|tournament-final|network-client.
+- FireChampionProjectValidator coverage for QA summary argument parsing.
+- Summary QA variants now open the correct mode branch before freezing the summary screen: quick win, quick loss, tournament final, and network client.
+- Current gap audit now records summary variant visual QA evidence.
+- README now documents the QA summary and court override arguments.
+
+Previously added and still included:
+- Summary screen cleanup: live match HUD is no longer drawn while the match summary is open.
+- Serve prompt residue is suppressed outside the Playing state, so the post-match summary no longer shows stale serve text behind the result panel.
+- FireChampionOverlayRenderer owns the summary backdrop darkening and win/loss tint layer through DrawSummaryBackdrop.
+- Three project-owned 1280x720 full-scene court background PNGs under Assets/Resources/FireChampion/Courts.
+- FireChampionCourtAssets loads dojo, rooftop, and future court backgrounds through Resources.
+- FireChampionMatchRenderer draws selected full-scene court backgrounds before gameplay-critical court lines, players, net, shuttle, VFX, and HUD.
+- FireChampionProjectValidator requires every court background resource to load and retain 1280x720 runtime dimensions.
+- QA launch supports -firechampion-qa-court dojo|rooftop|future|index for direct visual verification.
+- FireChampionBalanceLoadReport for balance-data loading diagnostics.
+- Data-driven tactical AI shot choice with GameInput.dropIntent and legacy network input compatibility.
+- Project-owned generated WAV cues under Assets/Resources/FireChampion/Audio, loaded by FireChampionAudioAssets with synthesized fallback.
+- Project-owned transparent PNG VFX assets under Assets/Resources/FireChampion/VFX, loaded by FireChampionVfxAssets with procedural fallback.
+- Internal Player screenshot automation through FireChampionQaCapture.cs.
+
+Verification evidence:
+- Unity validator log: F:\东西\智能体\项目\ai小玩意\outputs\unity-summary-variants-validator-20260627-r2.log
+  Result: Fire Champion project validation passed; return code 0.
+  Balance evidence: Loaded from Resources/FireChampion/Data/fire_champion_balance (15332 chars).
+  AI evidence: tacticalDrop=12, rallyFrames=5040, rallyAiContacts=44, rallyLongestExchange=8, clamp/rally invalid counts were 0.
+- Unity Windows build log: F:\东西\智能体\项目\ai小玩意\outputs\unity-summary-variants-build-20260627-r2.log
+  Result: Build Finished, Result: Success; Fire Champion Windows build result: Succeeded; return code 0.
+- Summary variant Player screenshot QA:
+  - F:\东西\智能体\项目\ai小玩意\outputs\FireChampion_summary_variant_win_capture_20260627_r2.png
+  - F:\东西\智能体\项目\ai小玩意\outputs\FireChampion_summary_variant_loss_capture_20260627_r2.png
+  - F:\东西\智能体\项目\ai小玩意\outputs\FireChampion_summary_variant_tournament-final_capture_20260627_r2.png
+  - F:\东西\智能体\项目\ai小玩意\outputs\FireChampion_summary_variant_network-client_capture_20260627_r2.png
+  Result: all four Player runs exited with code 0, screenshots exist, and manual review confirms correct tint, score, copy, and branch-specific first button.
+- Summary variant Player logs:
+  - F:\东西\智能体\项目\ai小玩意\outputs\FireChampion_summary_variant_win_player_20260627_r2.log
+  - F:\东西\智能体\项目\ai小玩意\outputs\FireChampion_summary_variant_loss_player_20260627_r2.log
+  - F:\东西\智能体\项目\ai小玩意\outputs\FireChampion_summary_variant_tournament-final_player_20260627_r2.log
+  - F:\东西\智能体\项目\ai小玩意\outputs\FireChampion_summary_variant_network-client_player_20260627_r2.log
+  Result: no real matches for Exception, Error, Crash, Fatal, NullReference, MissingMethod, FileNotFound, DllNotFound, ArgumentException, Assertion, or AccessViolation.
+- FireChampion Player process check after QA: no remaining process.
+- Windows zip check: FireChampion.exe and Assembly-CSharp.dll exist; FireChampionRecords is excluded; resources.assets is present.
+- Source zip check: FireChampionGame.cs, FireChampionQaLaunch.cs, FireChampionOverlayRenderer.cs, FireChampionProjectValidator.cs, CurrentGapAudit, court PNGs, and README are present; Library and Logs are excluded.
+
+Known warning / limitation:
+- Unity logs may include non-fatal LicensingClient handshake/access-token warnings before successfully resolving the Personal license.
+- The game still needs hands-on feel tuning, two-machine LAN validation, profiler/performance budget, multi-hour stability, authored character animation sprites, final UI/font skin, and polished audio mixing/ambience.
